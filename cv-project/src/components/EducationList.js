@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
+
+import React, {Component} from 'react';
 import { v4 as uuid } from 'uuid'
 import NewEducationEntryForm from './NewEducationEntryForm.js'
 import EducationEntry from './EducationEntry.js'
 
+// import React, { useState, useEffect } from 'react';
+// const EducationList = (props) => {
 class EducationList extends Component {
+    
 	constructor(props) {
 		super(props);
 
@@ -28,7 +32,7 @@ class EducationList extends Component {
     render() { 
         return (
             <div>
-                <h1>Education</h1>
+                <h2>Education</h2>
                 <NewEducationEntryForm create={this.createEduEntry} />
                 {this.renderEducationList()}
             </div>

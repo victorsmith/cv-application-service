@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../App';
 
 class PersonalData extends Component {
 	constructor(props) {
@@ -45,42 +45,50 @@ class PersonalData extends Component {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<div>
-					<label htmlFor="firstName">First Name</label>
-					<input
-						name="firstName"
-						placeholder="John"
-						value={this.state.firstName}
-						onChange={this.handleChange}
-					/>
-			
-					<label htmlFor="lastName">Last Name</label>
-					<input
-						name="lastName"
-						placeholder="Doe"
-						value={this.state.lastName}
-						onChange={this.handleChange}
-					/>
-					
-					<label htmlFor="email">Email</label>
-					<input
-						name="email"
-						placeholder="June 1st, 2020"
-						value={this.state.email}
-						onChange={this.handleChange}
-					/>
+			<div>
+				<h2>Personal</h2>
+				<form onSubmit={this.handleSubmit}>
+					<div>
+						<label htmlFor="firstName">First Name</label>
+						<input
+							name="firstName"
+							placeholder="John"
+							value={this.state.firstName}
+							onChange={this.handleChange}
+						/>
 
-					<label htmlFor="phone">Phone</label>
-					<input
-						name="phone"
-						placeholder="June 30st, 2020"
-						value={this.state.phone}
-						onChange={this.handleChange}
-					/>
-					<button>Update</button>
-				</div>
-			</form>
+						<label htmlFor="lastName">Last Name</label>
+						<input
+							name="lastName"
+							placeholder="Doe"
+							value={this.state.lastName}
+							onChange={this.handleChange}
+						/>
+					</div>
+
+					<div>
+						<label htmlFor="email">Email</label>
+						<input
+							name="email"
+							placeholder="June 1st, 2020"
+							value={this.state.email}
+							onChange={this.handleChange}
+						/>
+
+						<label htmlFor="phone">Phone</label>
+						<input
+							name="phone"
+							placeholder="June 30st, 2020"
+							value={this.state.phone}
+							onChange={this.handleChange}
+						/>
+					</div>
+
+					<div>
+						<button>Update</button>
+					</div>
+				</form>
+			</div>
 		);
 	}
 }

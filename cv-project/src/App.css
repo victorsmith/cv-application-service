@@ -63,8 +63,11 @@ ul {
 .section {
   background-color: #0f347eb9;
   border-radius: 15px;
+  width: 40%;
   margin: 1em;
   padding: 1em;
 }
 
-
+h2 {
+  margin: 0.2em 0;
+}

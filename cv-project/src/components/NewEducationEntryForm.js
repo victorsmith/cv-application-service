@@ -64,28 +64,28 @@ class NewEducationEntryForm extends Component {
 						onChange={this.handleChange}
 					/>
 				</div>
-                <div>
-                    <label htmlFor="from">From</label>
-                    <input
-                        name="from"
-                        placeholder="June 1st, 2020"
-                        value={this.state.from}
-                        onChange={this.handleChange}
-                    />
-                    
-                    <label htmlFor="to">To</label>
-                    <input
-                        name="to"
-                        placeholder="June 30st, 2020"
-                        value={this.state.to}
-                        onChange={this.handleChange}
-                    />
-                    
-                    
-                </div>
+				<div>
+					<label htmlFor="from">From</label>
+					<input
+						name="from"
+						placeholder="June 1st, 2020"
+						value={this.state.from}
+						type="date"
+						onChange={this.handleChange}
+					/>
+
+					<label htmlFor="to">To</label>
+					<input
+						name="to"
+						placeholder="June 30st, 2020"
+						value={this.state.to}
+						type="date"
+						onChange={this.handleChange}
+					/>
+				</div>
 
 				<div>
-					<button>Add a new Box!</button>
+					<button>Submit</button>
 				</div>
 			</form>
 		);
