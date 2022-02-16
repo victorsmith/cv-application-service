@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { v4 as uuid } from 'uuid';
-import NewEducationEntryForm from './NewEducationEntryForm.js';
-import EducationEntry from './EducationEntry.js';
 
 class PersonalData extends Component {
 	constructor(props) {
