@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../App.css';
 
 class PersonalData extends Component {
 	constructor(props) {
@@ -53,8 +54,7 @@ class PersonalData extends Component {
 						value={this.state.firstName}
 						onChange={this.handleChange}
 					/>
-				</div>
-				<div>
+			
 					<label htmlFor="lastName">Last Name</label>
 					<input
 						name="lastName"
@@ -62,8 +62,7 @@ class PersonalData extends Component {
 						value={this.state.lastName}
 						onChange={this.handleChange}
 					/>
-				</div>
-				<div>
+					
 					<label htmlFor="email">Email</label>
 					<input
 						name="email"
@@ -79,9 +78,6 @@ class PersonalData extends Component {
 						value={this.state.phone}
 						onChange={this.handleChange}
 					/>
-				</div>
-
-				<div>
 					<button>Update</button>
 				</div>
 			</form>
