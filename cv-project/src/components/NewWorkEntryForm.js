@@ -38,7 +38,7 @@ class NewWorkEntryForm extends Component {
 					<label htmlFor="company">Company</label>
 					<input
 						name="company"
-						placeholder="company"
+						placeholder="Company"
 						value={this.state.company}
 						onChange={this.handleChange}
 					/>

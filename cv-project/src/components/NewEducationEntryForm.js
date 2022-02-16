@@ -50,7 +50,7 @@ class NewEducationEntryForm extends Component {
 					<label htmlFor="school">University</label>
 					<input
 						name="school"
-						placeholder="school"
+						placeholder="School"
 						value={this.state.school}
 						onChange={this.handleChange}
 					/>
@@ -68,7 +68,6 @@ class NewEducationEntryForm extends Component {
 					<label htmlFor="from">From</label>
 					<input
 						name="from"
-						placeholder="June 1st, 2020"
 						value={this.state.from}
 						type="date"
 						onChange={this.handleChange}
@@ -77,9 +76,8 @@ class NewEducationEntryForm extends Component {
 					<label htmlFor="to">To</label>
 					<input
 						name="to"
-						placeholder="June 30st, 2020"
-						value={this.state.to}
 						type="date"
+						value={this.state.to}
 						onChange={this.handleChange}
 					/>
 				</div>
