@@ -53,8 +53,18 @@ ul {
   margin: 0; /* Remove margins */
 }
 
-.container {
-  border: #282c34 2px solid;
-  margin: 2em;
-  
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+.section {
+  background-color: #0f347eb9;
+  border-radius: 15px;
+  margin: 1em;
+  padding: 1em;
+}
+
+
