@@ -1,7 +1,7 @@
 // import React, { Component } from 'react';
 import React, { useState } from 'react';
 
-const NewEducationEntryForm = () => {
+const NewEducationEntryForm = (props) => {
 	const [educationEntry, setEducationEntry] = useState({
 		school: '',
 		subject: '',
@@ -19,7 +19,15 @@ const NewEducationEntryForm = () => {
 	function handleSubmit(event) {
 		event.preventDefault();
 		console.log(educationEntry);
-		return educationEntry;
+		
+		props.create(educationEntry);
+		// reset state 
+		setEducationEntry( () => ({
+			school: '',
+			subject: '',
+			from: '',
+			to: '',
+		}));
 	}
 
 	return (

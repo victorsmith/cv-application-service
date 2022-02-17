@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 
 
 
-const NewWorkEntryForm = () => {
+const NewWorkEntryForm = (props) => {
 
 	const [workEntry, setWorkEntry] = useState({
 		company: '',
@@ -23,16 +23,25 @@ const NewWorkEntryForm = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		console.log(workEntry);
-		return workEntry;
+
+		props.create(workEntry);
+		// reset state 
+		// => why does the prevState callback have to exist?
+		setWorkEntry( () => ({
+			company: '',
+			position: '',
+			from: '',
+			to: '',
+		}));
 	}
 
 	return (
 		<form onSubmit={handleSubmit}>
 			<div>
-				<label htmlFor="school">University</label>
+				<label htmlFor="company">Company</label>
 				<input
-					name="school"
-					placeholder="School"
+					name="company"
+					placeholder="Elev Homes"
 					value={workEntry.company}
 					onChange={(e) => {
 						handleChange(e);
@@ -40,10 +49,10 @@ const NewWorkEntryForm = () => {
 				/>
 			</div>
 			<div>
-				<label htmlFor="subject">Subject of Study</label>
+				<label htmlFor="position">Position</label>
 				<input
-					name="subject"
-					placeholder="Mathematics"
+					name="position"
+					placeholder="Software Developer"
 					value={workEntry.position}
 					onChange={(e) => {
 						handleChange(e);
