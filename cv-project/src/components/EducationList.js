@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid'
 import NewEducationEntryForm from './NewEducationEntryForm.js'
 import EducationEntry from './EducationEntry.js'
-import WorkEntry from './WorkEntry.js';
 
 
 const EducationList = (props) => {

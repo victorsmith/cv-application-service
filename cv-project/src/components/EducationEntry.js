@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
+const EducationEntry = (props) => {
+	const { school, subject, from, to } = props.info;
 
-class EducationEntry extends Component {
-	render() {
-		const { school, subject, from, to } = this.props.info;
-
-		return <div> 
-            <h1>Hey</h1>
-            <h1>{school}</h1>
-            <h1>{subject}</h1>
-            <h1>{from}</h1>
-            <h1>{to}</h1>
-        </div>
-        ;
-	}
-}
+	return (
+		<div>
+			<h6>{school}</h6>
+			<h6>{subject}</h6>
+			<h6>{from}</h6>
+			<h6>{to}</h6>
+		</div>
+	);
+};
 
 export default EducationEntry;
