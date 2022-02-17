@@ -1,83 +1,83 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
 
 
-class NewWorkEntryForm extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { 
-            company: '', 
-            position: '',
-            from: '',
-            to: '',
-        };
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+
+
+const NewWorkEntryForm = () => {
+
+	const [workEntry, setWorkEntry] = useState({
+		company: '',
+		position: '',
+		from: '',
+		to: '',
+	});
+
+
+	const handleChange = (e) => {
+		setWorkEntry((prevState) => ({
+			...prevState,
+			[e.target.name]: e.target.value,
+		}));
 	}
-
-	handleSubmit(event) {
+	
+	const handleSubmit = (event) => {
 		event.preventDefault();
-		this.props.create(this.state);
-		this.setState({
-			company: '',
-			position: '',
-			from: '',
-			to: '',
-		});
+		console.log(workEntry);
+		return workEntry;
 	}
 
-	handleChange(event) {
-		this.setState({
-			[event.target.name]: event.target.value,
-		});
-	}
+	return (
+		<form onSubmit={handleSubmit}>
+			<div>
+				<label htmlFor="school">University</label>
+				<input
+					name="school"
+					placeholder="School"
+					value={workEntry.company}
+					onChange={(e) => {
+						handleChange(e);
+					}}
+				/>
+			</div>
+			<div>
+				<label htmlFor="subject">Subject of Study</label>
+				<input
+					name="subject"
+					placeholder="Mathematics"
+					value={workEntry.position}
+					onChange={(e) => {
+						handleChange(e);
+					}}
+				/>
+			</div>
+			<div>
+				<label htmlFor="from">From</label>
+				<input
+					name="from"
+					value={workEntry.from}
+					type="date"
+					onChange={(e) => {
+						handleChange(e);
+					}}
+				/>
 
-	render() {
-		return (
-			<form onSubmit={this.handleSubmit}>
-				<div>
-					<label htmlFor="company">Company</label>
-					<input
-						name="company"
-						placeholder="Company"
-						value={this.state.company}
-						onChange={this.handleChange}
-					/>
-				</div>
-				<div>
-					<label htmlFor="position">Position</label>
-					<input
-						name="position"
-						placeholder="Software Developer"
-						value={this.state.position}
-						onChange={this.handleChange}
-					/>
-				</div>
-				<div>
-					<label htmlFor="from">From</label>
-					<input
-						name="from"
-						placeholder="June 1st, 2020"
-						value={this.state.from}
-						type="date"
-						onChange={this.handleChange}
-					/>
+				<label htmlFor="to">To</label>
+				<input
+					name="to"
+					type="date"
+					value={workEntry.to}
+					onChange={(e) => {
+						handleChange(e);
+					}}
+				/>
+			</div>
 
-					<label htmlFor="to">To</label>
-					<input
-						name="to"
-						placeholder="June 30st, 2020"
-						value={this.state.to}
-						type="date"
-						onChange={this.handleChange}
-					/>
-				</div>
+			<div>
+				<button type="submit">Submit</button>
+			</div>
+		</form>
+	);
 
-				<div>
-					<button>Submit</button>
-				</div>
-			</form>
-		);
-	}
 }
-  
+
 export default NewWorkEntryForm;

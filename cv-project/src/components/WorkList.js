@@ -28,6 +28,8 @@ class WorkList extends Component {
 		return (
 			<div>
 				<h2>Experience</h2>
+				<NewWorkEntryForm></NewWorkEntryForm>
+				
 				<NewWorkEntryForm create={this.createWorkEntry} />
 				{this.renderWorkList()}
 			</div>

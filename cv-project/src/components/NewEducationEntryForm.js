@@ -1,93 +1,78 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import React, { useState } from 'react';
 
+const NewEducationEntryForm = () => {
+	const [educationEntry, setEducationEntry] = useState({
+		school: '',
+		subject: '',
+		from: '',
+		to: '',
+	});
 
-class NewEducationEntryForm extends Component {
-	constructor(props) {
-		super(props);
-		this.state = { 
-            school: '', 
-            subject: '',
-            from: '',
-            to: '',
-        };
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+	const handleChange = (e) => {
+		setEducationEntry((prevState) => ({
+			...prevState,
+			[e.target.name]: e.target.value,
+		}));
 	}
 
-	// Form submitting logic, prevent default page
-	// refresh and call create method of BoxList
-	// component to create new box
-	handleSubmit(event) {
+	function handleSubmit(event) {
 		event.preventDefault();
-		this.props.create(this.state);
-		this.setState({
-			school: '',
-			subject: '',
-			from: '',
-			to: '',
-		});
+		console.log(educationEntry);
+		return educationEntry;
 	}
 
-	// Method causes to store all the values of the
-	// input field in react state using single method
-	// handleChanges of all the input field
-	// using ES6 javascript feature computed property names
-	handleChange(event) {
-		this.setState({
-			[event.target.name]: event.target.value,
-		});
-	}
+	return (
+		<form onSubmit={handleSubmit}>
+			<div>
+				<label htmlFor="school">University</label>
+				<input
+					name="school"
+					placeholder="School"
+					value={educationEntry.school}
+					onChange={(e) => {
+						handleChange(e);
+					}}
+				/>
+			</div>
+			<div>
+				<label htmlFor="subject">Subject of Study</label>
+				<input
+					name="subject"
+					placeholder="Mathematics"
+					value={educationEntry.subject}
+					onChange={(e) => {
+						handleChange(e);
+					}}
+				/>
+			</div>
+			<div>
+				<label htmlFor="from">From</label>
+				<input
+					name="from"
+					value={educationEntry.from}
+					type="date"
+					onChange={(e) => {
+						handleChange(e);
+					}}
+				/>
 
-	// return a form using which we add box properties
-	// to create Boxes. It is controlled form i.e. values
-	// of the input field not stored in DOM values are exist
-	// in react component itself as state
+				<label htmlFor="to">To</label>
+				<input
+					name="to"
+					type="date"
+					value={educationEntry.to}
+					onChange={(e) => {
+						handleChange(e);
+					}}
+				/>
+			</div>
 
-	render() {
-		return (
-			<form onSubmit={this.handleSubmit}>
-				<div>
-					<label htmlFor="school">University</label>
-					<input
-						name="school"
-						placeholder="School"
-						value={this.state.school}
-						onChange={this.handleChange}
-					/>
-				</div>
-				<div>
-					<label htmlFor="subject">Subject of Study</label>
-					<input
-						name="subject"
-						placeholder="Mathematics"
-						value={this.state.subject}
-						onChange={this.handleChange}
-					/>
-				</div>
-				<div>
-					<label htmlFor="from">From</label>
-					<input
-						name="from"
-						value={this.state.from}
-						type="date"
-						onChange={this.handleChange}
-					/>
+			<div>
+				<button type="submit">Submit</button>
+			</div>
+		</form>
+	);
+};
 
-					<label htmlFor="to">To</label>
-					<input
-						name="to"
-						type="date"
-						value={this.state.to}
-						onChange={this.handleChange}
-					/>
-				</div>
-
-				<div>
-					<button>Submit</button>
-				</div>
-			</form>
-		);
-	}
-}
-  
 export default NewEducationEntryForm;
