@@ -7,7 +7,7 @@ import WorkEntry from './WorkEntry.js';
 
 const WorkList = (props) => {
 
-	const [workList, setWorkListEntry] = useState( [] );
+	const [workList, setWorkListEntry] = useState([]);
 
 	const createWorkEntry = (prevListState) => {
 		const newEntry = { ...prevListState, id: uuid() };
