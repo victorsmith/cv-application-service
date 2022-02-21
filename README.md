@@ -1,5 +1,5 @@
 # cv-application-service
-CV-Application Project for the Odin Project
+CV-Generator Project for the Odin Project
 
 Made using ReactJS
 
